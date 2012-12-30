@@ -1,0 +1,4 @@
+<AppConfig>
+	<SourcePackagePath>\SDMMC\F33APP.zip</SourcePackagePath>
+	<TargetDir>\SDMMC\</TargetDir>
+</AppConfig>
