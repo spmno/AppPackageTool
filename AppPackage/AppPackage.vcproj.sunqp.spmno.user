@@ -302,7 +302,7 @@
 				SQLDebugging=""
 				Environment=""
 				EnvironmentMerge="true"
-				DebuggerFlavor=""
+				DebuggerFlavor="4"
 				MPIRunCommand=""
 				MPIRunArguments=""
 				MPIRunWorkingDirectory=""
@@ -316,7 +316,7 @@
 				DeploymentDevice="bd5bf81b-bbdd-49ca-806b-8ccc5262482b"
 			/>
 			<DebuggerTool
-				RemoteExecutable=""
+				RemoteExecutable="\Storage Card\AppPackage\AppPackage.exe"
 				Arguments=""
 			/>
 		</Configuration>

@@ -12,6 +12,7 @@ typedef enum
 	NO_ENOUGH_SPACE_ERROR,				//没有足够的空间
 	JSON_FILE_PARSE_ERROR,				//JSON文件解析失败
 	MD5_CHECK_ERROR,					//MD5文件校验失败
+	UPDATE_PACKAGE_SUCCESS,				//成功
 
 }DECOMPRESS_ERROR;
 class DecompressDelegate

@@ -3,6 +3,8 @@
 #include <map>
 #include <string>
 
+#include "zip_util\unzip.h"
+
 using namespace std;
 
 class DecompressManager
@@ -14,11 +16,16 @@ public:
 	bool decompressWithDelegate(DecompressDelegate* dele, bool checkFlag);
 private:
 	static DWORD deCompressProc_(LPVOID lpParameter);
-	void replace_(TCHAR* source);
-	void deleteDirectory_(TCHAR* dirName);  
-	void checkMd5();
-	unsigned conv_(unsigned int a);
+	
+	bool openZipFile_();
+	bool selectMethod_();
+	
+
+
 	DecompressDelegate* decompressDelegate_;
-	map<wstring, wstring > fileContainer_;
+	
 	bool checkFlag_;
+	HZIP zipHandle_;
+
+	char updateMethodName_[64];
 };

@@ -836,7 +836,7 @@ std::ostream& operator<<( std::ostream &sout, const Value &root )
 
 } // namespace Json
 
-
+/*
 namespace std
 {
  _Lockit::_Lockit()
@@ -847,3 +847,4 @@ namespace std
  {
  }
 };
+*/

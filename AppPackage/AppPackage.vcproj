@@ -689,6 +689,90 @@
 			/>
 		</Configuration>
 		<Configuration
+			Name="Debug|CE6EMU (ARMV4I)"
+			OutputDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
+			IntermediateDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
+			ConfigurationType="1"
+			UseOfMFC="1"
+			CharacterSet="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE"
+				MkTypLibCompatible="false"
+				TargetEnvironment="1"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				ExecutionBucket="7"
+				Optimization="0"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;DEBUG;$(ARCHFAM);$(_ARCHFAM_);STANDARDSHELL_UI_MODEL"
+				MinimalRebuild="true"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE"
+				Culture="2052"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalOptions=" /subsystem:windowsce,6.00"
+				LinkIncremental="2"
+				GenerateDebugInformation="true"
+				StackReserveSize="65536"
+				StackCommitSize="4096"
+				EntryPointSymbol="WinMainCRTStartup"
+				TargetMachine="0"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCCodeSignTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+			<DeploymentTool
+				ForceDirty="-1"
+				RemoteDirectory="\Storage Card\AppPackage"
+				RegisterOutput="0"
+				AdditionalFiles=""
+			/>
+			<DebuggerTool
+			/>
+		</Configuration>
+		<Configuration
 			Name="Release|BSP_SDK (ARMV4I)"
 			OutputDirectory="$(PlatformName)\$(ConfigurationName)"
 			IntermediateDirectory="$(PlatformName)\$(ConfigurationName)"
@@ -1354,90 +1438,6 @@
 			/>
 		</Configuration>
 		<Configuration
-			Name="Debug|CE6EMU (ARMV4I)"
-			OutputDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
-			IntermediateDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
-			ConfigurationType="1"
-			UseOfMFC="1"
-			CharacterSet="1"
-			>
-			<Tool
-				Name="VCPreBuildEventTool"
-			/>
-			<Tool
-				Name="VCCustomBuildTool"
-			/>
-			<Tool
-				Name="VCXMLDataGeneratorTool"
-			/>
-			<Tool
-				Name="VCWebServiceProxyGeneratorTool"
-			/>
-			<Tool
-				Name="VCMIDLTool"
-				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE"
-				MkTypLibCompatible="false"
-				TargetEnvironment="1"
-			/>
-			<Tool
-				Name="VCCLCompilerTool"
-				ExecutionBucket="7"
-				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;"
-				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE;WINCE;DEBUG;$(ARCHFAM);$(_ARCHFAM_);STANDARDSHELL_UI_MODEL"
-				MinimalRebuild="true"
-				RuntimeLibrary="1"
-				UsePrecompiledHeader="0"
-				WarningLevel="3"
-				DebugInformationFormat="3"
-			/>
-			<Tool
-				Name="VCManagedResourceCompilerTool"
-			/>
-			<Tool
-				Name="VCResourceCompilerTool"
-				PreprocessorDefinitions="_DEBUG;_WIN32_WCE=$(CEVER);UNDER_CE"
-				Culture="2052"
-				AdditionalIncludeDirectories="$(IntDir)"
-			/>
-			<Tool
-				Name="VCPreLinkEventTool"
-			/>
-			<Tool
-				Name="VCLinkerTool"
-				AdditionalOptions=" /subsystem:windowsce,6.00"
-				LinkIncremental="2"
-				GenerateDebugInformation="true"
-				StackReserveSize="65536"
-				StackCommitSize="4096"
-				EntryPointSymbol="WinMainCRTStartup"
-				TargetMachine="0"
-			/>
-			<Tool
-				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCXDCMakeTool"
-			/>
-			<Tool
-				Name="VCBscMakeTool"
-			/>
-			<Tool
-				Name="VCCodeSignTool"
-			/>
-			<Tool
-				Name="VCPostBuildEventTool"
-			/>
-			<DeploymentTool
-				ForceDirty="-1"
-				RemoteDirectory=""
-				RegisterOutput="0"
-				AdditionalFiles=""
-			/>
-			<DebuggerTool
-			/>
-		</Configuration>
-		<Configuration
 			Name="Release|CE6EMU (ARMV4I)"
 			OutputDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
 			IntermediateDirectory="CE6EMU (ARMV4I)\$(ConfigurationName)"
@@ -1668,6 +1668,14 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
+					Name="Debug|CE6EMU (ARMV4I)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
 					Name="Release|BSP_SDK (ARMV4I)"
 					>
 					<Tool
@@ -1732,14 +1740,6 @@
 					/>
 				</FileConfiguration>
 				<FileConfiguration
-					Name="Debug|CE6EMU (ARMV4I)"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						UsePrecompiledHeader="1"
-					/>
-				</FileConfiguration>
-				<FileConfiguration
 					Name="Release|CE6EMU (ARMV4I)"
 					>
 					<Tool
@@ -1750,6 +1750,10 @@
 			</File>
 			<File
 				RelativePath=".\stdafx.h"
+				>
+			</File>
+			<File
+				RelativePath=".\SymbolDefine.h"
 				>
 			</File>
 		</Filter>
@@ -1791,6 +1795,14 @@
 			<File
 				RelativePath=".\DecompressManager.cpp"
 				>
+				<FileConfiguration
+					Name="Debug|CE6EMU (ARMV4I)"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						ShowIncludes="false"
+					/>
+				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\DecompressManager.h"
@@ -1844,6 +1856,58 @@
 		<Filter
 			Name="ErrorLog"
 			>
+		</Filter>
+		<Filter
+			Name="UpdateMethod"
+			>
+			<File
+				RelativePath=".\update_method\AbstractUpdateMethod.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\AbstractUpdateMethod.h"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\AllUpdateMethod.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\AllUpdateMethod.h"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\CompareUpdateMethod.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\CompareUpdateMethod.h"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\SettingUpdateMethod.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\SettingUpdateMethod.h"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\UpdateMethodFactory.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\UpdateMethodFactory.h"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\UpdateUnit.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\update_method\UpdateUnit.h"
+				>
+			</File>
 		</Filter>
 		<File
 			RelativePath=".\ReadMe.txt"
