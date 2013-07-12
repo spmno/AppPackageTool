@@ -101,3 +101,65 @@ DECOMPRESS_ERROR AbstractUpdateMethod::checkMD5()
 	CloseHandle(jsonFile);
 	return UPDATE_PACKAGE_SUCCESS;
 }
+
+DECOMPRESS_ERROR AbstractUpdateMethod::checkFreeSpace(CheckSpaceMethod method)
+{
+	TCHAR* targetDir = FileInfo::getInstance().getTargetFileName();
+
+	ZIPENTRY ze;
+	if (GetZipItem(zipHandle_,-1,&ze) != ZR_OK) {
+		return GET_ZIP_HEAD_ERROR;
+	}
+
+	DWORD numitems=ze.index;
+	updateFileNumber_ = numitems;
+	long unzipSize = ze.unc_size;
+	
+	for (int zi=0; zi<numitems; zi++) {
+		
+		ZIPENTRY ze;
+		long copySize = 0;
+		// fetch individual details
+		if (GetZipItem(zipHandle_,zi,&ze) != ZR_OK) {
+			return GET_ZIP_ITEM_ERROR;
+		}
+		if (method == ALL) {
+			copySize = ze.unc_size;
+		} else {
+			if (ze.unc_size != 0) {
+				wstring targetFileName(targetDir);
+				UpdateUnit::replace(ze.name);
+				targetFileName += ze.name;
+				HANDLE diskFile = CreateFile(targetFileName.c_str(), GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+				if (diskFile == INVALID_HANDLE_VALUE) {
+					copySize = ze.unc_size;
+				} else {
+					copySize = ze.unc_size - GetFileSize(diskFile, NULL);
+					copySize = (copySize > 0) ? copySize : 0;
+					CloseHandle(diskFile);
+					diskFile = NULL;
+				}
+			} else {
+				copySize = 0;
+			}
+		}
+
+		
+		unzipSize += copySize;
+	}
+
+	ULARGE_INTEGER freeBytesAvailableToCaller;
+    ULARGE_INTEGER totalNumberOfBytes;
+    ULARGE_INTEGER totalNumberOfFreeBytes;
+
+#define RESERVED_SPACE	1024*1024
+	if (GetDiskFreeSpaceEx(targetDir, &freeBytesAvailableToCaller, &totalNumberOfBytes, &totalNumberOfFreeBytes)) {
+		if (freeBytesAvailableToCaller.QuadPart < (unzipSize + RESERVED_SPACE))	{
+			
+			return NO_ENOUGH_SPACE_ERROR;
+		}
+	} else {
+		return NO_ENOUGH_SPACE_ERROR;
+	}
+	return UPDATE_PACKAGE_SUCCESS;
+}

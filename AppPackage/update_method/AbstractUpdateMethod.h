@@ -10,6 +10,10 @@ using namespace std;
 class AbstractUpdateMethod
 {
 public:
+	enum CheckSpaceMethod {
+		ALL,
+		DIFF,
+	};
 
 	AbstractUpdateMethod(void);
 	~AbstractUpdateMethod(void);
@@ -28,6 +32,7 @@ public:
 	virtual DECOMPRESS_ERROR prepare() = 0;
 	virtual DECOMPRESS_ERROR copyUpdateFile() = 0;
 	DECOMPRESS_ERROR checkMD5();
+	DECOMPRESS_ERROR checkFreeSpace(CheckSpaceMethod method);
 protected:
 	HZIP zipHandle_;
 	int updateFileNumber_;
