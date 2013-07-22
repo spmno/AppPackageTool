@@ -136,9 +136,14 @@ bool DecompressManager::selectMethod_()
 		return false;
 	}
 
-	strcpy(updateMethodName_, jsonObject[UPDATE_METHOD].asCString());
-
-
+	Json::Value updateMethod =  jsonObject[UPDATE_METHOD];
+	if (updateMethod.isNull()) {
+		//compatibility with older versions
+		strcpy(updateMethodName_, "ALL");
+	} else {
+		strcpy(updateMethodName_, jsonObject[UPDATE_METHOD].asCString());
+	}
+	
 	if (strlen(updateMethodName_) == 0) {
 		return false;
 	}

@@ -59,6 +59,11 @@ DECOMPRESS_ERROR AbstractUpdateMethod::checkMD5()
 	}
 
 	md5Value = jsonObject[MD5_CONTENT];
+
+	//compatibility with older versions
+	if (md5Value.isNull()) {
+		md5Value = jsonObject;
+	}
 	Json::Value::Members member;
 	member = md5Value.getMemberNames();
 
